@@ -1,10 +1,10 @@
 import 'package:advisor/3_application/core/services/theme_services.dart';
 //import 'package:advisor/3_application/pages/advisor/bloc/advisor_bloc.dart';
 import 'package:advisor/3_application/pages/advisor/cubit/advisor_cubit.dart';
-
 import 'package:advisor/3_application/pages/advisor/widgets/advice_field.dart';
 import 'package:advisor/3_application/pages/advisor/widgets/custom_btn.dart';
 import 'package:advisor/3_application/pages/advisor/widgets/error_msg.dart';
+import 'package:advisor/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:provider/provider.dart';
@@ -15,7 +15,7 @@ class AdvisorPageWrapperProvider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AdvisorCubit(),
+      create: (context) => sl<AdvisorCubit>(),
       //AdvisorBloc(),
       child: AdvisorPage(),
     );
