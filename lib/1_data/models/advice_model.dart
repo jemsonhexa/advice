@@ -6,7 +6,7 @@ class AdviceModel extends AdviceEntity with EquatableMixin {
 
   factory AdviceModel.fromJson(Map<String, dynamic> json) {
     final slip = json['slip'] ?? {};
-    print(slip);
+    //(slip);
     return AdviceModel(
       advice: slip['advice'] ?? 'No advice found',
       id: slip['id'] ?? 0,

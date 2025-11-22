@@ -49,7 +49,7 @@ class AdvisorPage extends StatelessWidget {
                 child: BlocBuilder<AdvisorCubit, AdvisorCubitState>(
                   builder: (context, state) {
                     if (state is AdvisorInitial) {
-                      return Text("Your advice is waiting");
+                      return Text("Press below button for advice :)");
                     } else if (state is AdvisorLoadingState) {
                       return CircularProgressIndicator(
                         color: themData.colorScheme.secondary,
