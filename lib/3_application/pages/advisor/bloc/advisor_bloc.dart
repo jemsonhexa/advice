@@ -17,9 +17,9 @@ class AdvisorBloc extends Bloc<AdvisorEvent, AdvisorState> {
       debugPrint('Got advice');
 
       //emit the LodedState
-      emit(AdvisorLoadedState(advice: "A Fake Advice recieved"));
+      //emit(AdvisorLoadedState(advice: "A Fake Advice recieved"));
       //error
-      /// emit(AdvisorErrorState(errorMsg: "Got Error"));
+      emit(AdvisorErrorState(errorMsg: "Got Error"));
     });
   }
 }

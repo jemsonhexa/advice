@@ -1,5 +1,4 @@
 import 'package:advisor/3_application/core/services/theme_services.dart';
-//import 'package:advisor/3_application/pages/advisor/bloc/advisor_bloc.dart';
 import 'package:advisor/3_application/pages/advisor/cubit/advisor_cubit.dart';
 import 'package:advisor/3_application/pages/advisor/widgets/advice_field.dart';
 import 'package:advisor/3_application/pages/advisor/widgets/custom_btn.dart';
@@ -49,7 +48,7 @@ class AdvisorPage extends StatelessWidget {
                 child: BlocBuilder<AdvisorCubit, AdvisorCubitState>(
                   builder: (context, state) {
                     if (state is AdvisorInitial) {
-                      return Text("Press below button for advice :)");
+                      return Text("Your Advice is waiting for you!");
                     } else if (state is AdvisorLoadingState) {
                       return CircularProgressIndicator(
                         color: themData.colorScheme.secondary,
@@ -65,7 +64,17 @@ class AdvisorPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 5),
-            SizedBox(child: CustomBtn()),
+            SizedBox(
+              child: CustomBtn(
+                onTap: () {
+                  BlocProvider.of<AdvisorCubit>(
+                    //AdvisorBloc
+                    context,
+                  ).adviceRequested(); //add(AdvisorRequestEvent());
+                  // to trigger event
+                },
+              ),
+            ),
           ],
         ),
       ),

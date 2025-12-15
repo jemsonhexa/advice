@@ -17,6 +17,7 @@ dependencies:
   dartz: ^0.10.1
   http: 
   get_it: ^9.0.5
+  integration_test:
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +27,9 @@ dev_dependencies:
   test: ^1.26.3
   mockito: 
   build_runner: 
+  bloc_test: 
+  mocktail: 
+
 
 
 flutter:
